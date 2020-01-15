@@ -5,10 +5,11 @@
   <div class="form">
     
     <form class="login-form">
-      <input type="text" v-model="input.Username" placeholder="Username"/>
-      <input type="password" v-model ="input.Password" placeholder="Password"/>
-      <button @click="$router.push('Home')">login</button>
-      <p >{{message}}</p>
+      <input type="text" v-model="input.username" placeholder="Username"/>
+      <input type="password" v-model ="input.password" placeholder="Password"/>
+      <button type="button" @click="login()">login</button>
+      <br/> 
+      <span >{{message}}</span>
     </form>
   </div>
 </div>
@@ -24,30 +25,31 @@ export default {
             return {
                 message: "",
                 input: {
-                    Username: "",
-                    Password: ""
+                    username: "",
+                    password: "",
                 },
                 response: ""
             }
         },
   
   methods: {
-    clicklogin: function() {
+    login() {
       
-      this.$http.post("https://https://reqres.in/api/login", this.input, { headers: { "content-type": "application/json" } }).then(result => {
-                    this.response = result.data;
-                }, error => {
-                    console.error(error);
-                });
-    if(response == null)
-    {
-      message : "Invalid Username/Password";
-      alert();  
-    }
-    else
-    {
-      alert(response);
-    }
+      if(this.input.username != "" && this.input.password != "") {
+                    axios.post("https://reqres.in/api/login",{"email": "eve.holt@reqres.in",
+    "password": "cityslicka"}).then(response =>{this.response = response.data})
+                    if(this.response != null) {
+                        this.$emit("authenticated", true);
+                        
+                        this.$router.replace({ name: "Home" });
+                    } else {
+                      this.message = "The username and / or password is incorrect";
+                        
+                    }
+                } else {
+                    this.message ="A username and password must be present";
+                }
+                
     }
     
   }

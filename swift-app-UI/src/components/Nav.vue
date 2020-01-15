@@ -13,7 +13,7 @@
   </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-      <router-link to="/"><a class="nav-link" style="color:#001489;text-decoration: none;">Log out</a></router-link>
+      <router-link to="/Login"   v-on:click.native="logout()" replace><a class="nav-link" style="color:#001489;text-decoration: none;">Log out</a></router-link>
       </li>
     </ul>
 </nav>
@@ -26,7 +26,13 @@
 
 
 export default {
-    name: 'Nav'
+    name: 'Nav',
+    
+    methods:{
+      logout(){
+        this.authenticated = false;
+      }
+    }
 }
 </script>
 <style>
