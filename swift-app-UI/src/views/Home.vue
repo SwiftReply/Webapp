@@ -20,12 +20,16 @@
       <br/>
 
   <div class="row col-md-12" style="margin:2px;">
-  <div class="myBox col-md-5">
+  <div class="myBox col-md-7">
     <h1>Questions Related to You</h1>
     <div Class="Questions">
-      <Span>How to set value for a field of one list of object from another list of object having a common field?</span>
-      <br/>
-      <Span style="font: 12px 'Roboto', sans-serif;font-weight:bold;">Asked 29 Dec'19 by USERNAME</Span>
+      <div class="card">
+            <span style="margin-bottom:5px">How to set value for a field of one list of object from another list of object having a common field?</span>
+            
+            <Span style="font: 12px 'Roboto', sans-serif;font-weight:bold;">Asked 29 Dec'19 by USERNAME</Span>
+      </div>
+      
+      
       </div>  
     
 
@@ -33,10 +37,10 @@
   </div>
 
   <div class="vl col-md-1"></div>
-  <div class="col-md-5">
+  <div class="col-md-4" style="float:left">
      
     <div Class="QuestionArea">
-      <p class="usernametag"><span class="glyphicon glyphicon-user">User Name</span></p>
+      <p class="usernametag"><span class="glyphicon glyphicon-user"></span>User Name</p>
       <textarea rows="13" cols="50" placeholder="What is Your Question?">
       </textarea>
       <div>
@@ -156,6 +160,7 @@ hr {
 {
   color: #001489;
   font-family: "Roboto", sans-serif;
+  text-align: left;
 }
 
 .QuestionArea
@@ -163,6 +168,7 @@ hr {
   font-family: "Roboto", sans-serif;
   color: #001489;
   margin :0px;
+  float: left;
   
 }
 
@@ -180,11 +186,11 @@ border-radius: 5px;
 .myBox {
 border: none;
 padding: 5px;
-font: 24px/36px "Roboto", sans-serif;
+font: 16px "Roboto", sans-serif;
 width: 200px;
 height: 400px;
 overflow: scroll;
-text-align: left;
+
 font-family: "Roboto", sans-serif;
 color: #001489;
 
@@ -219,7 +225,15 @@ h1
 .vl {
   border-left: 3px solid #ffc72c;
   height: 400px;
-  margin-left: 100px;
-  margin-right: -100px;
+  margin-left: 50px;
+  margin-right: -80px;
+  
+}
+
+.card{
+  text-align: left;
+  padding: 10px;
+  border-color: #001489;
+  
 }
 </style>
