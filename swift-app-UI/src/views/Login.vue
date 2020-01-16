@@ -1,15 +1,25 @@
 <template>
     <div class="Login">
         
-        <div class="login-page">
-  <div class="form">
+  <div class="login-page">
+      <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+
+  
     
     <form class="login-form">
       <input type="text" v-model="input.username" placeholder="Username"/>
       <input type="password" v-model ="input.password" placeholder="Password"/>
       <button type="button" @click="login()">login</button>
-      <br/> 
-      <span >{{message}}</span>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+      
+      <p class="errormsg">{{message}}</p>
     </form>
   </div>
 </div>
@@ -17,6 +27,7 @@
 </template>
 <script>
 import axios from 'axios'
+
 export default {
   name: 'Login',
   components: {
@@ -31,7 +42,11 @@ export default {
                 response: ""
             }
         },
-  
+   mounted() {
+      $('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+      });
+   },
   methods: {
     login() {
       
@@ -103,7 +118,7 @@ export default {
 }
 .form button:hover,.form button:active,.form button:focus {
   background: #001489;
-  color: #ffc72c;
+  color: white;
 }
 .form .message {
   margin: 15px 0 0;
@@ -115,6 +130,9 @@ export default {
   text-decoration: none;
 }
 
+.form .register-form {
+  display: none;
+}
 .container {
   position: relative;
   z-index: 1;
@@ -157,5 +175,12 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
+
+.errormsg
+{
+ margin: 15px 0 0;
+  color: red;
+  font-size: 12px; 
 }
 </style>

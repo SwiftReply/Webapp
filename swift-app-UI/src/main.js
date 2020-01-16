@@ -4,7 +4,8 @@ import router from './router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import  Axios  from  'axios'
-
+window.$ = require('jquery')
+window.JQuery = require('jquery')
 Vue.config.productionTip = false
 
 new Vue({
