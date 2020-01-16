@@ -4,11 +4,13 @@
   <div class="login-page">
       <div class="form">
     <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
+      <input type="text" v-model="register.Name" placeholder="name"/>
+      <input type="password" v-model="register.Password" placeholder="password"/>
+      <input type="text" v-model="register.Emailaddress" placeholder="email address"/>
+      <button type="button" @click="registerbtn()">create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
+      <p class="registermsg">{{registersuccess}}</p>
+      <p class="errormsg">{{message}}</p>
     </form>
 
   
@@ -33,11 +35,19 @@ export default {
   components: {
   },
   data () {
+    errors: []
             return {
                 message: "",
+                registersuccess: "",
                 input: {
                     username: "",
                     password: "",
+                },
+
+                register: {
+                      Name: "",
+                      Password: "",
+                      Emailaddress: "",
                 },
                 response: ""
             }
@@ -48,11 +58,35 @@ export default {
       });
    },
   methods: {
+     registerbtn(){
+          if(this.register.Name != "" && this.register.Password != "" && this.register.Emailaddress != "")
+          {
+              axios.post("https://reqres.in/api/register",{"email": "eve.holt@reqres.in",
+          "password": "cityslicka"}).then(response =>{this.response = response.data});
+          if(this.response != null)
+          {
+              this.registersuccess = "User Registered Sucessfully";
+              this.message = "";
+          }
+          else
+          {
+              this.message = "Some Error Occured";
+              this.registersuccess = "";
+          }
+          }
+          else
+          {
+               this.message ="A Name,Password and Email Address must be present";
+               this.registersuccess = "";
+          }
+     },
+
+
     login() {
       
       if(this.input.username != "" && this.input.password != "") {
                     axios.post("https://reqres.in/api/login",{"email": "eve.holt@reqres.in",
-    "password": "cityslicka"}).then(response =>{this.response = response.data})
+    "password": "cityslicka"}).then(response =>{this.response = response.data});
                     if(this.response != null) {
                         this.$emit("authenticated", true);
                         
@@ -180,7 +214,15 @@ body {
 .errormsg
 {
  margin: 15px 0 0;
-  color: red;
-  font-size: 12px; 
+ color: red;
+ font-size: 12px; 
+}
+
+.registermsg
+{
+  margin: 15px 0 0;
+  color: green;
+  font-size: 15px; 
+  font-weight: bold;
 }
 </style>
