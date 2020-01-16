@@ -54,11 +54,7 @@
   </div>  
 
 
-  <div class="footer">
-          <span >All Rights Reserved &copy; 2020
-           
-             </span> 
-      </div>
+  
     
   </div>
   
@@ -78,17 +74,7 @@ export default {
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.footer {
-  font-family: "Roboto", sans-serif;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #ffc72c;
-  color: #001489;
-  text-align: center;
-  font-weight: bold;
-}
+
 
 
 .searchbar
@@ -96,17 +82,20 @@ export default {
   font-family: "Roboto", sans-serif;
   border: none;
   
+  
 }
 
 .filter
 {
   color: #001489;
-  border-radius: 5px;
-  border-style: solid;
-  border-color: #001489;
-  border-width: 0.5px;
+  font-family: "Roboto", sans-serif;
   margin-right: 5px;
   height: 30px;
+  outline: 0;
+  border: 0;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 
@@ -114,36 +103,51 @@ export default {
 .searchbartext
 {
   color: #001489;
-  border-radius: 5px;
-  border-style: solid;
-  border-color: #001489;
-  border-width: 0.5px;
+  font-family: "Roboto", sans-serif;
   margin-right: 5px;
+  padding: 15px;
   height: 30px;
+  outline: 0;
+  border: 0;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 
 .button
 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  outline: 0;
+  background: #ffc72c;
+  width: 100%;
+  border: 0;
+  height: 30px;
   color: #001489;
-  background-color: #ffc72c;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 0.2px;
-  border-color: #001489;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
   margin-right: 16px;
 }
 
 .searchbutton
 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  outline: 0;
+  background: #ffc72c;
+  width: 100%;
+  border: 0;
+  height: 30px;
   color: #001489;
-  background-color: #ffc72c;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 0.2px;
-  border-color: #001489;
-  margin-right: 16px;
-  height: 30px;  
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer; 
 
 }
 
@@ -175,10 +179,15 @@ hr {
 textarea
 {
 
-border-radius: 5px;
-  border-style: solid;
-  border-color: #001489;
-  border-width: 0.5px;
+  color: #001489;
+  font-family: "Roboto", sans-serif;
+  margin-right: 5px;
+  padding: 15px;
+  outline: 0;
+  border: 0;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  font-size: 14px;
 
 }
 
@@ -233,7 +242,15 @@ h1
 .card{
   text-align: left;
   padding: 10px;
-  border-color: #001489;
+  color: #001489;
+  font-family: "Roboto", sans-serif;
+  margin-right: 5px;
+  padding: 15px;
+  outline: 0;
+  border: 0;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  font-size: 14px;
   
 }
 </style>

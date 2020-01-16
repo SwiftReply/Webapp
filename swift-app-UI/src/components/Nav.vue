@@ -18,6 +18,9 @@
     </ul>
 </nav>
 
+<div class="footer">
+          <span id="copyright">All Rights Reserved &copy; </span>  
+      </div>
     </div>
 </template>
 
@@ -27,7 +30,9 @@
 
 export default {
     name: 'Nav',
-    
+    mounted(){
+        document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
+    },
     methods:{
       logout(){
         this.authenticated = false;
@@ -42,6 +47,20 @@ export default {
   font-family: "Raleway", sans-serif;
   background-color: #ffc72c;
   font-weight: Bold
+  
+}
+
+.footer {
+  font-family: "Roboto", sans-serif;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffc72c;
+  color: #001489;
+  text-align: center;
+  font-weight: bold;
+  
   
 }
 
