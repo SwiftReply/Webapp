@@ -19,15 +19,15 @@
 
       <br/>
 
-  <div class="row col-md-12" style="margin:2px;">
+  <div class="row col-md-12 homecontent" style="margin:2px;">
   <div class="myBox col-md-7">
     <h1>Questions Related to You</h1>
     <div Class="Questions">
       <div class="card">
-            <span style="margin-bottom:5px">How to set value for a field of one list of object from another list of object having a common field?</span>
-            
-            <Span style="font: 12px 'Roboto', sans-serif;font-weight:bold;">Asked 29 Dec'19 by USERNAME</Span>
+            <a href="" >How to set value for a field of one list of object from another list of object having a common field?</a>
+            <Span style="font: 12px 'Roboto', sans-serif;font-weight:bold;">Asked 29 Dec'19 by <a href="">USERNAME</a></Span>
       </div>
+      
       
       
       </div>  
@@ -52,7 +52,10 @@
   </div>
 
   </div>  
+  
+  <div class="row col-md-12 searchbarresult" style="margin:2px;">
 
+  </div>
 
   
     
@@ -251,6 +254,19 @@ h1
   background: #f2f2f2;
   box-sizing: border-box;
   font-size: 14px;
+  margin-bottom: 2px;
   
+}
+
+.card a {
+  color: #001489;
+  font-family: "Roboto", sans-serif;
+  margin-bottom:5px;
+  text-decoration:none;
+}
+
+.searchbarresult{
+  display: none;
+
 }
 </style>
