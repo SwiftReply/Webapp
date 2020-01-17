@@ -13,7 +13,7 @@
     <input type="text" placeholder="Search.." name="search" class="searchbartext col-md-5">
     
       <button type="submit" class="searchbutton col-md-1">Search</button>
-      <button type="submit" class="searchbutton col-md-1" data-toggle="modal" data-target="#myModal">Ask Question</button>
+      <button type="submit" class="quebtn col-md-2" data-toggle="modal" data-target="#myModal">Ask Question</button>
       </div>
 
       <hr/>
@@ -155,14 +155,31 @@ export default {
   border: 0;
   height: 30px;
   color: #001489;
-  font-size: 12px;
+  font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer; 
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-right: 5px;
+  
 
+}
+
+.quebtn{
+  font-family: "Roboto", sans-serif;
+  font-weight: bold-condensed;
+  text-transform: uppercase;
+  outline: 0;
+  background: #ffc72c;
+  width: 100%;
+  border: 0;
+  height: 30px;
+  color: #001489;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer; 
+
+  
 }
 
 hr {

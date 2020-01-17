@@ -59,7 +59,7 @@ export default {
   background-color: #001489;
   color: white;
   text-align: center;
-  
+  font-weight: 200;
   
   
 }
