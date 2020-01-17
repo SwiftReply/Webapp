@@ -1,19 +1,19 @@
 <template>
     <div class="nab">
         <nav class="navbar navbar-expand-sm navbar-dark">
-            <router-link to="/Home"> <a class="navbar-brand" style="color:#001489;text-decoration: none;">Swift Reply</a></router-link>
+            <router-link to="/Home"> <a class="navbar-brand" style="color:white;text-decoration: none;">Swift Reply</a></router-link>
   <ul class="navbar-nav">
     
     <li class="nav-item active">
-      <router-link to="/Home"><a class="nav-link" style="color:#001489;text-decoration:none;">Home</a></router-link>
+      <router-link to="/Home"><a class="nav-link" style="color:white;text-decoration:none;">Home</a></router-link>
     </li>
     <li class="nav-item">
-      <router-link to="/MyQuestions"><a class="nav-link" style="color:#001489;text-decoration:none;">My Questions</a></router-link>
+      <router-link to="/MyQuestions"><a class="nav-link" style="color:white;text-decoration:none;">My Questions</a></router-link>
     </li>
   </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-      <router-link to="/Login"   v-on:click.native="logout()" replace><a class="nav-link" style="color:#001489;text-decoration: none;">Log out</a></router-link>
+      <router-link to="/Login"   v-on:click.native="logout()" replace><a class="nav-link" style="color:white;text-decoration: none;">Log out</a></router-link>
       </li>
     </ul>
 </nav>
@@ -41,25 +41,25 @@ export default {
 }
 </script>
 <style>
-@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 .nab{
-  font-family: "Raleway", sans-serif;
-  background-color: #ffc72c;
-  font-weight: Bold
+  font-family: 'Roboto', sans-serif;;
+  background-color: #001489;
+  
   
 }
 
 .footer {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #ffc72c;
-  color: #001489;
+  background-color: #001489;
+  color: white;
   text-align: center;
-  font-weight: bold;
+  
   
   
 }

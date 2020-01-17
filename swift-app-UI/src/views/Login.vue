@@ -4,9 +4,11 @@
   <div class="login-page">
       <div class="form">
     <form class="register-form">
-      <input type="text" v-model="register.Name" placeholder="name"/>
-      <input type="password" v-model="register.Password" placeholder="password"/>
-      <input type="text" v-model="register.Emailaddress" placeholder="email address"/>
+      <input type="text" v-model="register.EmployeeID" placeholder="Employee ID"/>
+      <input type="text" v-model="register.Name" placeholder="Name"/>
+      <input type="text" v-model="register.Emailaddress" placeholder="Email Address"/>
+      <input type="password" v-model="register.Password" placeholder="Password"/>
+      <input type="text" v-model="register.Project" placeholder="Project"/>
       <button type="button" @click="registerbtn()">create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
       <p class="registermsg">{{registersuccess}}</p>
@@ -48,6 +50,8 @@ export default {
                       Name: "",
                       Password: "",
                       Emailaddress: "",
+                      EmployeeID: "",
+                      Project: "",
                 },
                 response: ""
             }

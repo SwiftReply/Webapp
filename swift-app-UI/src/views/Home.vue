@@ -10,48 +10,56 @@
     <option value="Generic">Generic</option>
   </select>
        
-    <input type="text" placeholder="Search.." name="search" class="searchbartext col-md-6">
+    <input type="text" placeholder="Search.." name="search" class="searchbartext col-md-5">
     
-      <button type="submit" class="searchbutton col-md-2">Search</button>
+      <button type="submit" class="searchbutton col-md-1">Search</button>
+      <button type="submit" class="searchbutton col-md-1" data-toggle="modal" data-target="#myModal">Ask Question</button>
       </div>
 
       <hr/>
 
       <br/>
 
-  <div class="row col-md-12 homecontent" style="margin:2px;">
-  <div class="myBox col-md-7">
+        <div class="homecontent row col-md-12 justify-content-center">
+          
+  <div class="myBox col-md-10">
     <h1>Questions Related to You</h1>
     <div Class="Questions">
       <div class="card">
             <a href="" >How to set value for a field of one list of object from another list of object having a common field?</a>
             <Span style="font: 12px 'Roboto', sans-serif;font-weight:bold;">Asked 29 Dec'19 by <a href="">USERNAME</a></Span>
       </div>
-      
-      
-      
       </div>  
-    
+  </div>
+  </div>
 
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
       
-  </div>
-
-  <div class="vl col-md-1"></div>
-  <div class="col-md-4" style="float:left">
-     
-    <div Class="QuestionArea">
-      <p class="usernametag"><span class="glyphicon glyphicon-user"></span>User Name</p>
-      <textarea rows="13" cols="50" placeholder="What is Your Question?">
-      </textarea>
-      <div>
-        <button type="submit" class="button col-md-2 ">Ask</button>
-      <button type="Reset" class="button col-md-2">Clear</button>
-
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title usernametag"><span class="glyphicon glyphicon-user"></span>UserName</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          	
+      		<textarea rows="13" cols="50" placeholder="What is Your Question?">
+      		</textarea>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        	<button type="submit" class="button col-md-2 ">Ask</button>
+      		<button type="button" class="button col-md-2" data-dismiss="modal">Close</button>
+          
+        </div>
+        
       </div>
-      </div>
+    </div>
   </div>
-
-  </div>  
   
   <div class="row col-md-12 searchbarresult" style="margin:2px;">
 
@@ -121,7 +129,7 @@ export default {
 .button
 {
   font-family: "Roboto", sans-serif;
-  font-weight: bolder;
+  font-weight: bold-condensed;
   text-transform: uppercase;
   outline: 0;
   background: #ffc72c;
@@ -139,7 +147,7 @@ export default {
 .searchbutton
 {
   font-family: "Roboto", sans-serif;
-  font-weight: bolder;
+  font-weight: bold-condensed;
   text-transform: uppercase;
   outline: 0;
   background: #ffc72c;
@@ -147,10 +155,13 @@ export default {
   border: 0;
   height: 30px;
   color: #001489;
-  font-size: 14px;
+  font-size: 12px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer; 
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 
 }
 
@@ -184,7 +195,7 @@ textarea
 
   color: #001489;
   font-family: "Roboto", sans-serif;
-  margin-right: 5px;
+  margin-right: 0px;
   padding: 15px;
   outline: 0;
   border: 0;
@@ -201,8 +212,6 @@ padding: 5px;
 font: 16px "Roboto", sans-serif;
 width: 200px;
 height: 400px;
-overflow: scroll;
-
 font-family: "Roboto", sans-serif;
 color: #001489;
 
@@ -237,8 +246,8 @@ h1
 .vl {
   border-left: 3px solid #ffc72c;
   height: 400px;
-  margin-left: 50px;
-  margin-right: -80px;
+  margin-left: 20px;
+  margin-right: -100px;
   
 }
 
@@ -247,7 +256,6 @@ h1
   padding: 10px;
   color: #001489;
   font-family: "Roboto", sans-serif;
-  margin-right: 5px;
   padding: 15px;
   outline: 0;
   border: 0;
