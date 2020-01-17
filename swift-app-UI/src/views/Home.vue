@@ -39,7 +39,9 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title usernametag"><span class="glyphicon glyphicon-user"></span>UserName</h4>
+          <div class="modal-title usernametag chip">
+                  John Doe
+          </div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
@@ -288,6 +290,24 @@ h1
   font-family: "Roboto", sans-serif;
   margin-bottom:5px;
   text-decoration:none;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 
 .searchbarresult{
