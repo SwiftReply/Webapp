@@ -1,7 +1,7 @@
 <template>
     <div class="nab">
         <nav class="navbar navbar-expand-sm navbar-dark">
-            <router-link to="/Home"> <a class="navbar-brand" style="color:white;text-decoration: none;">Swift Reply</a></router-link>
+            <router-link to="/Home"> <a class="navbar-brand" style="color:#ffc72c;font-family:'Helvetica', sans-serif;;text-decoration: none;">Swift Reply</a></router-link>
   <ul class="navbar-nav">
     
     <li class="nav-item active">
@@ -13,7 +13,7 @@
   </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-      <router-link to="/Login"   v-on:click.native="logout()" replace><a class="nav-link" style="color:white;text-decoration: none;">Log out</a></router-link>
+      <router-link to="/Login"   v-on:click.native="logout()" replace><a class="nav-link " style="color:white;text-decoration: none;"><v-icon name="sign-out-alt" scale="2"/></a></router-link>
       </li>
     </ul>
 </nav>

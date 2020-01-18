@@ -6,7 +6,7 @@
     <select name="Filter" class="filter col-md-2">
     <option value="JAVA">JAVA</option>
     <option value=".NET">.NET</option>
-    <option value="Oracle Fomrs">Oracle Fomrs</option>
+    <option value="Oracle Forms">Oracle Fomrs</option>
     <option value="Generic">Generic</option>
   </select>
        
@@ -40,7 +40,7 @@
         <!-- Modal Header -->
         <div class="modal-header">
           <div class="modal-title usernametag chip">
-                  John Doe
+                <v-icon name="user" scale="2"  style="margin-right:10px"/>John Doe
           </div>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
@@ -54,6 +54,12 @@
         
         <!-- Modal footer -->
         <div class="modal-footer">
+          <select name="TechnologyFilter" class="technologytag col-md-3">
+              <option value="JAVA">JAVA</option>
+              <option value=".NET">.NET</option>
+              <option value="Oracle Forms">Oracle Forms</option>
+              <option value="Generic">Generic</option>
+          </select>
         	<button type="submit" class="button col-md-2 ">Ask</button>
       		<button type="button" class="button col-md-2" data-dismiss="modal">Close</button>
           
@@ -111,6 +117,20 @@ export default {
   font-size: 14px;
 }
 
+.technologytag
+{
+  color: #001489;
+  font-family: "Roboto", sans-serif;
+  margin-right: 16px;
+  height: 30px;
+  outline: 0;
+  border: 0;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  
+
+}
 
 
 .searchbartext
