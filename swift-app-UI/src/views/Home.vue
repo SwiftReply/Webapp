@@ -20,18 +20,19 @@
 
       <br/>
 
-        <div class="homecontent row col-md-12 justify-content-center">
+  <div class="homecontent row col-md-12 justify-content-center">
           
   <div class="myBox col-md-10">
     <h1>Questions Related to You</h1>
-    <div Class="Questions">
+    <div Class="Questions" >
       <div class="card">
-            <a href="" >How to set value for a field of one list of object from another list of object having a common field?</a>
+            <a class="questiondetail">How to set value for a field of one list of object from another list of object having a common field?</a>
             <Span style="font: 12px 'Roboto', sans-serif;font-weight:bold;">Asked 29 Dec'19 by <a href="">USERNAME</a></Span>
       </div>
       </div>  
   </div>
   </div>
+
 
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
@@ -73,7 +74,58 @@
 
   </div>
 
-  
+  <div class="Questionclick row col-md-12 justify-content-center">
+    <div class="questionwithcomment col-md-12">
+      <div class="card">
+            <h4>Question</h4>
+            <a role="button" class="questiondetail">How to set value for a field of one list of object from another list of object having a common field?</a>
+            <div>
+            <Span  style="font: 14px 'Roboto', sans-serif;font-weight:bolder;">Asked 29 Dec'19 by <a href="">USERNAME</a></Span>
+            <Span class="col-md-2" style="font: 14px 'Roboto', sans-serif;font-weight:bolder;"><a  role="button"  data-toggle="modal" data-target="#myModal1">Add a Comment</a></span>
+            </div>
+            <hr/>
+            <h4>Comments</h4>
+            <div class="card" style="background: #e4e6e8">
+              <span class="questiondetail" style="font-size:16px;margin-bottom:5px">This is a Comment   </span>
+              <Span style="font: 14px 'Roboto', sans-serif;font-weight:bolder;">Commented 29 Dec'19 by <a href="">USERNAME</a></Span>
+            </div>
+            <hr/>
+            <button type="submit" class="button backbtn col-md-2">Back</button>
+  <div class="modal fade" id="myModal1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="modal-title usernametag chip">
+                <v-icon name="user" scale="2"  style="margin-right:10px"/>John Doe
+          </div>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          	
+      		<textarea rows="13" cols="50" placeholder="Add your Comment">
+      		</textarea>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        	<button type="submit" class="button col-md-2">Add</button>
+      		<button type="button" class="button col-md-2" data-dismiss="modal">Close</button>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+            
+              
+            
+      </div>
+    </div>
+  </div>
     
   </div>
   
@@ -86,6 +138,25 @@ import axios from 'axios'
 
 export default {
   name: 'home',
+  mounted(){
+        $(document).ready(function(){
+    $(".questiondetail").click(function(){
+        $(".Questionclick").show();
+       $(".homecontent").hide();
+
+    });
+
+});
+
+$(document).ready(function(){
+    $(".backbtn").click(function(){
+        $(".homecontent").show();
+       $(".Questionclick").hide();
+
+    });
+
+});
+    },
   components: {
     Nav
   },
@@ -99,7 +170,8 @@ export default {
       }).catch(error =>{
         console.log(error)
       })
-    }
+    },
+    
   }
 }
 
@@ -325,6 +397,7 @@ h1
   font-family: "Roboto", sans-serif;
   margin-bottom:5px;
   text-decoration:none;
+  font-size: 16px;
 }
 
 .chip {
@@ -349,4 +422,9 @@ h1
   display: none;
 
 }
+
+.Questionclick{
+  display: none;
+}
+
 </style>
