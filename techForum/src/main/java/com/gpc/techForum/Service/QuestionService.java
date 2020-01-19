@@ -35,4 +35,7 @@ public class QuestionService {
     public List<Question> getByEmpId(String empId) {
     	return (List<Question>) repository.findByEmpid(empId);
     }
+    public Question getLastId() {
+    	return repository.findTopByOrderByQIdDesc();
+    }
 }
