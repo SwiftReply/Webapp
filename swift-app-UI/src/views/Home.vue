@@ -80,11 +80,26 @@
 
 </template>
 <script>
-import Nav from '../components/Nav';
+import Nav from '../components/Nav'
+import constant from '../Util/constant'
+import axios from 'axios'
+
 export default {
   name: 'home',
   components: {
     Nav
+  },
+  created(){
+    this.getAllQuestion()
+  },
+  methods:{
+    getAllQuestion(){
+      axios.get(constant.baseURL+'/'+constant.serviceURL.getAllQuestion).then(response => {
+        console.log(response)
+      }).catch(error =>{
+        console.log(error)
+      })
+    }
   }
 }
 
