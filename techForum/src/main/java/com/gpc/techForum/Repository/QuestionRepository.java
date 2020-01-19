@@ -12,6 +12,4 @@ public interface QuestionRepository extends CrudRepository<Question, Long> {
 	
 	@Query("select c from Question c where c.Empid = :empId")
 	public List<Question> findByEmpid(String empId);
-	
-	public Question findTopByOrderByQIdDesc();
 }

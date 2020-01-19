@@ -26,7 +26,7 @@ public class QuestionController {
 	}
 	
 	@GetMapping(value = "/getAllQuestions", produces = "application/json; charset=UTF-8")
-    public List<Question> getAllQuestions() {
+    List<Question> getAllQuestions() {
         return questionService.getQuestions();
     }
 	
@@ -41,9 +41,4 @@ public class QuestionController {
 		List<Question> listQuestion = questionService.getByEmpId(empid);
 		return listQuestion;
 	}
-	
-	@GetMapping(value = "/getLastQRecord", produces = "application/json; charset=UTF-8")
-    public Question getLastQId() {
-        return questionService.getLastId();
-    }
 }
