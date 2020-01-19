@@ -3,14 +3,14 @@
     <Nav/>
     <br/>
     <div class="searchbar col-md-12">
-    <select name="Filter" class="filter col-md-2">
+    <!-- <select name="Filter" class="filter col-md-2">
     <option value="JAVA">JAVA</option>
     <option value=".NET">.NET</option>
     <option value="Oracle Forms">Oracle Fomrs</option>
     <option value="Generic">Generic</option>
-  </select>
+  </select> -->
        
-    <input type="text" placeholder="Search.." name="search" class="searchbartext col-md-5">
+    <input type="text" placeholder="Search.." name="search" class="searchbartext col-md-7">
     
       <button type="submit" class="searchbutton col-md-1">Search</button>
       <button type="submit" class="quebtn col-md-2" data-toggle="modal" data-target="#myModal">Ask Question</button>
@@ -49,19 +49,19 @@
         <!-- Modal body -->
         <div class="modal-body">
           	
-      		<textarea rows="13" cols="50" placeholder="What is Your Question?">
+      		<textarea rows="13" cols="50" v-model="description" placeholder="What is Your Question?">
       		</textarea>
         </div>
         
         <!-- Modal footer -->
         <div class="modal-footer">
-          <select name="TechnologyFilter" class="technologytag col-md-3">
-              <option value="JAVA">JAVA</option>
+          <select name="TechnologyFilter" @change="getTechId" v-model="selectedTech" class="technologytag col-md-3">
+              <option value="Java">JAVA</option>
               <option value=".NET">.NET</option>
               <option value="Oracle Forms">Oracle Forms</option>
               <option value="Generic">Generic</option>
           </select>
-        	<button type="submit" class="button col-md-2 ">Ask</button>
+        	<button type="submit" class="button col-md-2 " @click="addQuestion">Ask</button>
       		<button type="button" class="button col-md-2" data-dismiss="modal">Close</button>
           
         </div>
@@ -148,15 +148,23 @@ export default {
 
 });
 
-$(document).ready(function(){
-    $(".backbtn").click(function(){
-        $(".homecontent").show();
-       $(".Questionclick").hide();
+  $(document).ready(function(){
+      $(".backbtn").click(function(){
+          $(".homecontent").show();
+        $(".Questionclick").hide();
 
-    });
+      });
 
-});
-    },
+  });
+  },
+  data(){
+    return{
+      techId:'',
+      selectedTech:'',
+      description : "",
+      lastQId:''
+    }
+  },
   components: {
     Nav
   },
@@ -171,7 +179,51 @@ $(document).ready(function(){
         console.log(error)
       })
     },
-    
+    getTechId(){
+      axios.get(constant.baseURL+'/'+constant.serviceURL.gettechId)
+      .then(response => {
+        let responseBody = response.data;
+        let techDetails = responseBody.filter(e =>{
+          return this.selectedTech === e.name
+        }) 
+        this.techId = techDetails.techId
+      })
+      .catch(error =>{
+        console.log(error)
+      })
+    },
+    addQuestion(){
+      let request = {"empid":"1625957","description":this.description}
+      axios.post(constant.baseURL+'/'+constant.serviceURL.addQuestion,request)
+      .then(response => {
+        if(response.status===200){
+          this.getLastQID()
+        }
+      })
+      .catch(error =>{
+        console.log(error)
+      })
+    },
+    getLastQID(){
+      axios.get(constant.baseURL+'/'+constant.serviceURL.getLastQId)
+      .then(response =>{
+          this.lastQId = response.data.qid
+         // this.addJoinQuestionTechnology()
+      })
+      .catch(error =>{
+        console.log(error)
+      })
+    },
+    addJoinQuestionTechnology(){
+      let request = {"qid":this.lastQId,"description":this.description}
+      axios.post(constant.baseURL+'/'+constant.serviceURL.addJoinQuestionTechnology,request)
+      .then(response => {
+        if(response.status===200){
+          this.getLastQID()
+        }
+      })
+    }
+
   }
 }
 

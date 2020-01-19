@@ -1,6 +1,10 @@
 
 
-module.exports = {baseURL:'http://localhost:8082',
+module.exports = {baseURL:'http://localhost:8085',
 serviceURL:{
-    getAllQuestion:'getAllQuestions'
+    getAllQuestion:'getAllQuestions',
+    gettechId:'getAllTechnologies',
+    addQuestion : 'addQuestion',
+    getLastQId : 'getLastQRecord',
+    addJoinQuestionTechnology : 'addJoinQuestionTechnology'
 }}
